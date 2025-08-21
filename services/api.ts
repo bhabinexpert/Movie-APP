@@ -7,7 +7,7 @@ export const TMDB_CONFIG = {
     }
 }
 
-export const fetchPopularMovies = async ({ query}: {query:string})=>{
+export const fetchMovies = async ({ query}: {query:string})=>{
     // THIS FUNCTION WILL FETCH THE POPULAR MOVIES OR THE MOVIES QUERIED BY THE USER!
 
     const endpoint =query 
@@ -26,17 +26,5 @@ export const fetchPopularMovies = async ({ query}: {query:string})=>{
     }
 
     const data = await response.json();
+    return data.results;
 }
-// const url = 'https://api.themoviedb.org/3/authentication';
-// const options = {
-//   method: 'GET',
-//   headers: {
-//     accept: 'application/json',
-//     Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1NjhkMjQ3MzY0YTIwMWY3NjhkN2IzZTQ0ZjMwMTY0MSIsIm5iZiI6MTc1NTcwNjYyOC4xMjQsInN1YiI6IjY4YTVmNTA0NTdmY2EyOGFkZmZkMjdiMyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.rcvQn0x7PiCS2JYlKJLAg-mNUX8jOFS5J1V94I_nUX4'
-//   }
-// };
-
-// fetch(url, options)
-//   .then(res => res.json())
-//   .then(json => console.log(json))
-//   .catch(err => console.error(err));
